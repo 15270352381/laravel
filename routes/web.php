@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//后台首页
+Route::get('/admin', 'Admins\IndexController@create')->name('index');
+//后台用户逻辑
+Route::resource('users', 'Admins\UsersController');
